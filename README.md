@@ -1,63 +1,103 @@
-# MacGyver
-projet 3: Aidez MacGyver à s'échapper !
+# projet 3: Aidez MacGyver à s'échapper !
 
-Details du projet: 
-https://openclassrooms.com/projects/aidez-macgyver-a-sechapper
+## Courte description du projet
+C'est un jeu de labyrinthe codé en python. Mac Gyver qui doit collecter des objets puis endormir le garde qui surveille la sortie du labyrinthe.
 
-Contraintes
-Vous versionnerez votre code en utilisant Git et le publierez sur Github pour que votre mentor puisse le commenter,
-Vous respecterez les bonnes pratiques de la PEP 8 et développerez dans un environnement virtuel utilisant Python 3,
-Votre code devra être écrit en anglais : nom des variables, commentaires, fonctions...
+### Details du projet:   
+https://openclassrooms.com/projects/aidez-macgyver-a-sechapper  
 
-Contraintes suplémentaires:
-le projet étant public, je dois etre clair sur le code et la doc (pas seuelement pour moi et mon mentor)
+## Contraintes
+Vous versionnerez votre code en utilisant Git et le publierez sur Github pour que votre mentor puisse le commenter,  
+Vous respecterez les bonnes pratiques de la PEP 8 et développerez dans un environnement virtuel utilisant Python 3,  
+Votre code devra être écrit en anglais : nom des variables, commentaires, fonctions...  
 
-Anticipation de divers difficultés que je pourrais rencotrer
-je ne connais pas encore PyGame
-je dois apprendre a charger et lire les fichiers écrits dans mon propre format
-anglais !!
-quelques problèmes mineurs:
--placer aléatoirement les objets sur la carte (uniquement sur des cases vides)
--inventaire des objets (liste des objets avec 'true' si on les possède ou simple compteur d'objets ?)
--gamedesign: uniquement la map/labyrinthe ou des boutons suplémentaires ?, choix des graphismes
+### Contraintes suplémentaires:  
+le projet étant public, je dois etre clair sur le code et la doc (pas seuelement pour moi et mon mentor)  
 
+### Anticipation de divers difficultés que je pourrais rencotrer  
+je ne connais pas encore Pygame (affichage + gestion des evenements clavier)  
+je dois apprendre a charger et lire les fichiers écrits dans mon propre format  
+anglais !!  
+quelques problèmes mineurs:  
+-placer aléatoirement les objets sur la carte (uniquement sur des cases vides)  
+-inventaire des objets (liste des objets avec 'true' si on les possède ou simple compteur d'objets ?)  
+-gamedesign: uniquement la map/labyrinthe ou des boutons suplémentaires ?, choix des graphismes  
 
-Modules
-découpage en modules:
-chargement de la carte (a partir du fichier .xsb)
-gestion de l'affichage (module PyGame)
-gestion du jeu (calcul des collisions (murs), objet personnage, methodes de recuperation des objets, calcul de victoire)
+## Choix technique:
+Il est important de bien choisir les bibliothéques a utiliser et faire des prévisions du projet à long terme pour éviter la [*technical debt*](https://en.wikipedia.org/wiki/Technical_debt).  
 
-Versionnage
-1 version majeure (nouvelle branche)
-0.1 version mineure (sous étape)
-0.0.1 correction des bugs
+### Bibliothéque
+Le programme se base sur le module Pygame. Même si Tkinter est plus simple, Pygame est est plus adapté aux jeux 2D.  
+Source principale du choix: https://openclassrooms.com/forum/sujet/choisir-entre-pygame-et-tkinter
 
+### Format des fichiers
+Le fichier du labyrinthe est une version simplifié du [format .xsb](https://fr.wikipedia.org/wiki/Sokoban)  
 
-Versions
-1 - Créer le cadre de départ
+### Modules
+Le programme est découpé en plusieurs modules avec un objectif bien défini. Afin de respecter l'indépendance des modules, les diverses methodes qu'ils contiennent ne s'appelent pas directement entre eux. L'appel entre les modules est effectué dans la fonction main.
+#### Modules crées:
+chargement de la carte (a partir du fichier .xsb)  
+gestion de l'affichage (module Pygame)  
+gestion du jeu (calcul des collisions (murs), objet personnage, methodes de récupération des objets, calcul de victoire)  
 
-Initialisez un repo Git et envoyez-le sur Github.
+## Versionnage du projet
+### Notation des versions
+x.y.z  
+x: version majeure (nouvelle branche)  
+y: version mineure (sous étape)  
+z: correction des bugs  
 
-Commencez par créer le labyrinthe sans l’interface graphique. Quand la logique de votre labyrinthe est faite, utilisez le module PyGame pour dessiner l’interface graphique.
+### Versions
+0.0: Void
+C'est le neant. Il n'y a rien à part quelques idées.  
 
-Puis intéressez-vous aux trois éléments principaux du jeu : le gardien, MacGyver et les objets. Comment les représenter dans votre programme ? Où sont-ils placés au commencement du jeu ?  
-2 - Animer le personnage
+0.1: Création du dépot sur github  
 
-Le seul élément mouvant est MacGyver. Créez les méthodes de classe qui permettent de l'animer et de trouver la sortie. Pour l'instant, faites une version simplifiée du jeu dans laquelle MacGyver gagne en arrivant face au gardien.
- 
-3 - Récupérer les objets
+0.2: Rédaction du fichier README.md  
 
-Ajoutez la gestion des objets. Comment MacGyver les ramasse-t-il ?  Ajoutez également un compteur qui les listera.
- 
-4 - Gagner !
+0.5: 
 
-Enfin, changez la fin du jeu : MacGyver gagne s'il a bien ramassé tous les objets et endormi le garde. Sinon, il perd.
+1.1: Première brique  
+Affichage d'une image de briques.  
 
-5 - Intelligence artificielle
+1.2: Mur de briques  
+Affichage des briques ou espaces en parcourant une liste à 2 dimensions 15*15, appelé map.  
 
+1.3: Personnages  
+Affichage de Mac Gyver et du garde à une certaine position.  
+La position de Mac Gyver est definie dans son objet et la position du garde est definie dans la map.  
 
-Soutenir:
+1.4: Mac Gyver se déplace  
+Gére les évenements clavier, met à jour la position de Mac Gyver et rafraichit l'affichage.  
+Pas de gestion des collisions avec les murs et si Mac Gyver sort de la map la programme plante.  
+
+1.5: Mac Gyver se cogne  
+Gestion des collisions avec les murs et les bords de la map.  
+
+1.6: Mac Gyver gagne  
+Lorsque Mac Gyver arrive à la position du gardien le programme affiche un message de victoire, et propose peut etre de refaire une partie.  
+
+1.7: [Refonte du programme](https://openclassrooms.com/courses/manipulez-des-donnees-avec-python-1/organisez-un-projet-en-modules)  
+Le programme est découpé en 2 modules: la gestion de l'affichage et la gestion du jeu.  
+
+1.8: [Gestion des erreurs](https://openclassrooms.com/courses/manipulez-des-donnees-avec-python-1/gerez-les-erreurs-et-les-bogues)  
+Le programme leve une exception lorsque un bug survient. Le message d'erreur s'affiche en prennant en compte le niveau du log.  
+Points pouvant créer regulièrement des bugs: images manquantes, manque d'un module, mauvais chemin/nom de fichier, utilisateur qui tape n'importe quoi au clavier.  
+Les methodes qui ne prennent pas en paramètre des données externes au programme plantent plus rarement. Néanmoins il faut tester leurs paramètres pour éviter de commetre des erreurs en chaine si une methode en amont renvoie une valeur imprévue.  
+
+1.9: Beta de la 2.0  
+Le programme est testé sous d'autres systèmes d'exploitation et en demendant l'avis à des utilisateurs beta testeurs.  
+
+2.0: Animer le personnage (branche stable)
+Version majeure du programme. Célébration avec une pizza !
+
+3.0: Récupérer les objets (branche stable)  
+
+4.0: Gagner ! (branche stable)  
+
+5.0: Intelligence artificielle (branche stable)  
+
+## Contribuer: 
 pas de pull requests, seulement commentaires sur le code, conseils, problèmes avec le programme (issues)
 dev sous linux, tests sous win7 et arch, il faut un testeur sous macos
 
