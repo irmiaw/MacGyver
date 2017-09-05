@@ -48,7 +48,7 @@ C'est le néant. Il n'y a rien à part quelques idées.
 
 0.1: Création du dépot sur github  
 
-0.2: Rédaction du fichier README.md  <-- je suis ici !  
+0.2: Rédaction du fichier README.md    <---- je suis ici !  
 
 0.5: Expérimentations avec Pygame  
 
@@ -85,7 +85,7 @@ Les méthodes qui ne prennent pas en paramètre des données externes au program
 1.9: Bêta de la 2.0  
 Le programme est testé sous d'autres systèmes d'exploitation et en demandant l'avis à des utilisateurs bêta testeurs.  
 
-2.0: Animer le personnage (branche stable)
+2.0: Animer le personnage (branche stable)  
 Version majeure du programme. Célébration avec une pizza !
 
 ### Autres *milestones*
