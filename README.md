@@ -1,32 +1,27 @@
 # projet 3: Aidez MacGyver à s'échapper !
 
 ## Courte description du projet
-C'est un jeu de labyrinthe codé en python. Mac Gyver qui doit collecter des objets puis endormir le garde qui surveille la sortie du labyrinthe.
-
-### Details du projet:   
-https://openclassrooms.com/projects/aidez-macgyver-a-sechapper  
+C'est un jeu de labyrinthe codé en python. Mac Gyver doit collecter des objets puis endormir le garde qui surveille la sortie du labyrinthe.  
+**[Détails du projet]**(https://openclassrooms.com/projects/aidez-macgyver-a-sechapper)  
 
 ## Contraintes
-Vous versionnerez votre code en utilisant Git et le publierez sur Github pour que votre mentor puisse le commenter,  
-Vous respecterez les bonnes pratiques de la PEP 8 et développerez dans un environnement virtuel utilisant Python 3,  
-Votre code devra être écrit en anglais : nom des variables, commentaires, fonctions...  
+- Versionner le code avec git et le publier sur Github  
+- Suivre les recommandations de la PEP 8 et développerer dans un environnement virtuel utilisant Python 3  
+- Code écrit en anglais (nom des variables, commentaires, fonctions, etc)
 
-### Contraintes suplémentaires:  
-le projet étant public, je dois être clair sur le code et la doc (pas seulement pour moi et mon mentor)  
+## Anticipation de divers difficultés que je pourrais rencontrer  
+- je ne connais pas encore Pygame (affichage + gestion des évenements clavier)  
+- je dois apprendre a charger et lire les fichiers écrits dans mon propre format  
+- anglais !!  
+- quelques problèmes mineurs:  
+  - placer aléatoirement les objets sur la carte (uniquement sur des cases vides)  
+  - inventaire des objets (liste des objets avec 'true' si on les possède ou simple compteur d'objets ?)  
+  - game design: choix des graphismes, boutons/options dans le jeu ?
 
-### Anticipation de divers difficultés que je pourrais rencontrer  
-je ne connais pas encore Pygame (affichage + gestion des évenements clavier)  
-je dois apprendre a charger et lire les fichiers écrits dans mon propre format  
-anglais !!  
-quelques problèmes mineurs:  
--placer aléatoirement les objets sur la carte (uniquement sur des cases vides)  
--inventaire des objets (liste des objets avec 'true' si on les possède ou simple compteur d'objets ?)  
--gamedesign: uniquement la map/labyrinthe ou des boutons suplémentaires ?, choix des graphismes  
-
-## Choix technique:
+## Choix techniques:
 Il est important de bien choisir les bibliothéques a utiliser et faire des prévisions du projet à long terme pour éviter la [*technical debt*](https://en.wikipedia.org/wiki/Technical_debt).  
 
-### Bibliothéque
+### Bibliothéque graphique
 Le programme se base sur le module Pygame. Même si Tkinter est plus simple, Pygame est est plus adapté aux jeux 2D.  
 Source principale du choix: https://openclassrooms.com/forum/sujet/choisir-entre-pygame-et-tkinter
 
@@ -34,28 +29,29 @@ Source principale du choix: https://openclassrooms.com/forum/sujet/choisir-entre
 Le fichier du labyrinthe est une version simplifié du [format .xsb](https://fr.wikipedia.org/wiki/Sokoban)  
 
 ### Modules
-Le programme est découpé en plusieurs modules avec un objectif bien défini. Afin de respecter l'indépendance des modules, les diverses méthodes qu'ils contiennent ne s'appellent pas directement entre eux. L'appel entre les modules est effectué dans la fonction main.
-#### Modules crées:
-chargement de la carte (a partir du fichier .xsb)  
-gestion de l'affichage (module Pygame)  
-gestion du jeu (calcul des collisions (murs), objet personnage, méthodes de récupération des objets, calcul de victoire)  
+Le programme est découpé en plusieurs modules avec un objectif bien défini. Afin de respecter l'indépendance des modules, les diverses méthodes qu'ils contiennent ne s'appellent pas directement entre eux. L'appel entre les modules est effectué dans la fonction main.  
+- chargement de la carte (a partir du fichier .xsb)  
+- gestion de l'affichage (module Pygame)  
+- gestion du jeu (calcul des collisions (murs), objet personnage, méthodes de récupération des objets, calcul de victoire)  
 
 ## Versionnage du projet
 ### Notation des versions
-x.y.z  
+**x.y.z**  
 x: version majeure (nouvelle branche)  
-y: version mineure (sous étape)  
+y: version mineure (nouvelle fonctionnalité)  
 z: correction des bugs  
 
 ### Versions
-0.0: Void
+0.0: Void  
 C'est le néant. Il n'y a rien à part quelques idées.  
 
 0.1: Création du dépot sur github  
 
-0.2: Rédaction du fichier README.md  
+0.2: Rédaction du fichier README.md  <-- je suis ici !  
 
-0.5:
+0.5: Expérimentations avec Pygame  
+
+1.0: Synthèse des méthodes utiles de Pygame  
 
 1.1: Première brique  
 Affichage d'une image de briques.  
@@ -91,12 +87,14 @@ Le programme est testé sous d'autres systèmes d'exploitation et en demandant l
 2.0: Animer le personnage (branche stable)
 Version majeure du programme. Célébration avec une pizza !
 
+### Autres *milestones*
 3.0: Récupérer les objets (branche stable)  
 
 4.0: Gagner ! (branche stable)  
 
 5.0: Intelligence artificielle (branche stable)  
 
-## Contribuer:
-pas de pull requests, seulement commentaires sur le code, conseils, problèmes avec le programme (issues)  
-dev sous linux, tests sous win7 et arch, il faut un testeur sous macos
+## Contribuer
+Ce projet a pour but de valider mes compétences en python. Par conséquent toute pull request avec du code sera refusé.  
+Ouvrez plutôt une *issue* pour signaler un bug, une faute d'orthographe ou pour simplement donner un conseil.  
+Le programme est dévéloppé sous linux (Ubuntu 16.04 64bit). Des tests pour les autres OS sont nécessaires !
