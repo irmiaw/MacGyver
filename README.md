@@ -10,7 +10,7 @@ Mac Gyver doit collecter des objets puis endormir le garde qui surveille la sort
 - Suivre les recommandations de la PEP 8 et développerer dans un environnement virtuel utilisant Python 3  
 - Code écrit en anglais (nom des variables, commentaires, fonctions, etc)
 
-## Anticipation de diverses difficultés que je pourrais rencontrer  
+## Anticipation des diverses difficultés que je pourrais rencontrer  
 - je ne connais pas encore Pygame (affichage + gestion des évenements clavier)  
 - je dois apprendre a charger et lire les fichiers écrits dans mon propre format  
 - anglais !!  
