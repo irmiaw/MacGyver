@@ -1,8 +1,9 @@
 # projet 3: Aidez MacGyver à s'échapper !
 
 ## Courte description du projet
-C'est un jeu de labyrinthe codé en python. Mac Gyver doit collecter des objets puis endormir le garde qui surveille la sortie du labyrinthe.  
-**[Détails du projet]**(https://openclassrooms.com/projects/aidez-macgyver-a-sechapper)  
+C'est un jeu de labyrinthe codé en python.  
+Mac Gyver doit collecter des objets puis endormir le garde qui surveille la sortie du labyrinthe.  
+[**Détails du projet**](https://openclassrooms.com/projects/aidez-macgyver-a-sechapper)  
 
 ## Contraintes
 - Versionner le code avec git et le publier sur Github  
@@ -97,4 +98,4 @@ Version majeure du programme. Célébration avec une pizza !
 ## Contribuer
 Ce projet a pour but de valider mes compétences en python. Par conséquent toute pull request avec du code sera refusé.  
 Ouvrez plutôt une *issue* pour signaler un bug, une faute d'orthographe ou pour simplement donner un conseil.  
-Le programme est dévéloppé sous linux (Ubuntu 16.04 64bit). Des tests pour les autres OS sont nécessaires !
+Le programme est dévéloppé sous linux (Ubuntu 16.04 64bit). Des tests pour les autres OS sont bienvenus !
