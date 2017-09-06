@@ -23,7 +23,7 @@ Mac Gyver doit collecter des objets puis endormir le garde qui surveille la sort
 Il est important de bien choisir les bibliothéques a utiliser et faire des prévisions du projet à long terme pour éviter la [*technical debt*](https://en.wikipedia.org/wiki/Technical_debt).  
 
 ### Bibliothéque graphique
-Le programme se base sur le module Pygame. Même si Tkinter est plus simple, Pygame est est plus adapté aux jeux 2D.  
+Le programme se base sur le module Pygame. Même si Tkinter est plus simple, Pygame est plus adapté aux jeux 2D.  
 Source principale du choix: https://openclassrooms.com/forum/sujet/choisir-entre-pygame-et-tkinter
 
 ### Format des fichiers
