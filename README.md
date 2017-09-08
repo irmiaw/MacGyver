@@ -52,7 +52,7 @@ C'est le néant. Il n'y a rien à part quelques idées.
 
 0.1: Création du dépot sur github  
 
-0.2: Rédaction du fichier README.md    <---- je suis ici !  
+0.2: Rédaction du fichier README.md  
 
 0.5: Expérimentations avec Pygame  
 
@@ -61,7 +61,7 @@ C'est le néant. Il n'y a rien à part quelques idées.
 1.1: Première brique  
 Affichage d'une image de briques.  
 
-1.2: Mur de briques  
+1.2: Mur de briques    <---- je suis ici !  
 Affichage des briques ou espaces en parcourant une liste à 2 dimensions 15*15, appelé map.  
 
 1.3: Personnages  
