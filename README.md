@@ -19,6 +19,10 @@ Mac Gyver doit collecter des objets puis endormir le garde qui surveille la sort
   - inventaire des objets (liste des objets avec 'true' si on les possède ou simple compteur d'objets ?)  
   - game design: choix des graphismes, boutons/options dans le jeu ?
 
+### Problèmes imprévus
+- installer pygame en python3 (https://askubuntu.com/questions/401342/how-to-download-pygame-in-python3-3)  
+- trouver des images/sprites libres de droit (les images proposés par le cours sont pas très jolis)  
+
 ## Choix techniques:
 Il est important de bien choisir les bibliothéques a utiliser et faire des prévisions du projet à long terme pour éviter la [*technical debt*](https://en.wikipedia.org/wiki/Technical_debt).  
 
