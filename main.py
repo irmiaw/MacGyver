@@ -1,4 +1,6 @@
-# bin/env python3
+#! /usr/bin/env python3
+# coding: utf-8
+
 import pygame  # ne pas tout importer !!
 # display, mixer, draw, event, image, mouse, time
 
