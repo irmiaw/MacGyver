@@ -1,8 +1,10 @@
 #! /usr/bin/env python3
 # coding: utf-8
 
-import pygame  # ne pas tout importer !!
+import pygame  # ne pas tout importer mais uniquement les modules necessaires
 # display, mixer, draw, event, image, mouse, time
+from pygame.locals import * # import de tous les constantes
+
 
 # # import de me propres modules
 # import game
@@ -33,21 +35,21 @@ floor = pygame.transform.scale2x(floor)
 # ' ': floor
 # '.': guardian
 
-map = [["#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#"],
-       [" ", " ", " ", " ", " ", " ", "#", " ", " ", "#", " ", " ", " ", " ", " "],
-       ["#", " ", " ", "#", "#", " ", "#", " ", "#", "#", " ", "#", " ", " ", "#"],
-       ["#", " ", "#", " ", " ", "#", "#", " ", " ", " ", " ", "#", "#", "#", "#"],
-       ["#", " ", " ", " ", " ", "#", " ", "#", " ", "#", "#", "#", " ", "#", "#"],
-       ["#", " ", " ", "#", " ", "#", " ", "#", " ", " ", " ", "#", " ", " ", " "],
-       ["#", " ", "#", "#", " ", "#", " ", " ", "#", "#", " ", " ", " ", "#", " "],
-       ["#", " ", "#", "#", " ", " ", "#", " ", " ", "#", "#", "#", " ", "#", " "],
-       ["#", " ", " ", " ", "#", " ", " ", "#", " ", " ", " ", " ", "#", " ", " "],
-       ["#", "#", "#", " ", " ", "#", " ", "#", "#", "#", " ", "#", "#", " ", "#"],
-       ["#", " ", " ", "#", " ", "#", " ", "#", " ", "#", " ", " ", " ", " ", "#"],
-       ["#", "#", " ", "#", " ", "#", "#", " ", " ", "#", "#", "#", " ", "#", "#"],
-       ["#", " ", " ", " ", " ", " ", " ", " ", "#", "#", " ", " ", " ", "#", "#"],
-       ["#", " ", "#", " ", "#", " ", "#", " ", " ", " ", " ", "#", " ", " ", "."],
-       ["#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#", "#"],
+map = ["###############",
+       "      #  #     ",
+       "#  ## # ## #  #",
+       "# #  ##    ####",
+       "#    # # ### ##",
+       "#  # # #   #   ",
+       "# ## #  ##   # ",
+       "# ##  #  ### # ",
+       "#   #  #    #  ",
+       "###  # ### ## #",
+       "#  # # # #    #",
+       "## # ##  ### ##",
+       "#       ##   ##",
+       "# # # #    #  .",
+       "###############",
 ]
 
 
@@ -74,10 +76,12 @@ window.blit(mac_gyver, (MacGyver.x ,MacGyver.y))
 pygame.display.flip() # mettre à jour la fenêtre
 
 
-# Boucle principale
 continuer = 1
+
 while continuer:
-    continuer = int(input())
+    for event in pygame.event.get():   # parcours de la liste des evenements
+        if event.type == QUIT:     # evenement de type QUIT
+            continuer = 0
 
 # if __name__ == "__main__":
     # do stuff
