@@ -61,7 +61,7 @@ C'est le néant. Il n'y a rien à part quelques idées.
 1.1: Première brique  
 Affichage d'une image de briques.  
 
-1.2: Mur de briques    <---- je suis ici !  
+1.2: Mur de briques
 Affichage des briques ou espaces en parcourant une liste à 2 dimensions 15*15, appelé map.  
 
 1.3: Personnages  
@@ -75,8 +75,8 @@ Pas de gestion des collisions avec les murs et si Mac Gyver sort de la map le pr
 1.5: Mac Gyver se cogne  
 Gestion des collisions avec les murs et les bords de la map.  
 
-1.6: Mac Gyver gagne  
-Lorsque Mac Gyver arrive à la position du gardien le programme affiche un message de victoire, et propose peut-être de refaire une partie.  
+1.6: Mac Gyver gagne    <---- je suis ici !  
+Lorsque Mac Gyver arrive à la position du gardien le programme affiche un message de victoire et se termine.  
 
 1.7: [Refonte du programme](https://openclassrooms.com/courses/manipulez-des-donnees-avec-python-1/organisez-un-projet-en-modules)  
 Le programme est découpé en 2 modules: la gestion de l'affichage et la gestion du jeu.  
