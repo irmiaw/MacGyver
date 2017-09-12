@@ -38,12 +38,12 @@ class Character():
     def __init__(self, maze_map):
         self.case_position = {'x': 2, 'y': 1}
         self.maze_map = maze_map
-        self.num_items = 0
+        self.num_items = 3  # for now Mac Gyver has all items
 
     def collect_items(self):
         x = self.case_position['x']
         y = self.case_position['y']
-        if self.maze_map[y][x] == '$':
+        if self.maze_map[y][x] == '$':  # replace with a item list instead of '$'
             self.maze_map[y][x] = ' '
             self.num_items += 1
 
@@ -65,6 +65,15 @@ class Character():
         else:
             print("error: unknown direction")
         self.collect_items()
+
+    def victory(self):
+        x = self.case_position['x']
+        y = self.case_position['y']
+        if self.maze_map[y][x] == '.' and self.num_items == 3:
+            return True
+        else:
+            return False
+
 
     @property
     def pixel_position(self):
@@ -98,18 +107,14 @@ def display(maze_map):
 # pygame and objects init
 mac_gyver = Character(maze_map)
 
-pygame.init()  # init all moduls
-window = pygame.display.set_mode((15 * TILE_SIZE, 15 * TILE_SIZE)) # création d'une fenêtre
-#fond = pygame.image.load("background.jpg").convert() # charger une image
-image_brick = pygame.image.load("brick.png").convert_alpha() # charger une image avec fond transparent
+pygame.init()
+window = pygame.display.set_mode((15 * TILE_SIZE, 15 * TILE_SIZE))
+image_brick = pygame.image.load("brick.png").convert_alpha()
 image_floor = pygame.image.load("floor.png").convert_alpha()
 image_mac_gyver = pygame.image.load("mac_gyver.png").convert_alpha()
 image_guardian = pygame.image.load("murdoc.png").convert_alpha()
 image_brick = pygame.transform.scale2x(image_brick)
 image_floor = pygame.transform.scale2x(image_floor)
-#image.set_colorkey((255,255,255)) # rendre le blanc (valeur RGB : 255,255,255) de l'image transparent
-#fenetre.blit(brick, (320,240)) # coller une image sur la fenêtre
-
 
 display(maze_map)
 
@@ -117,20 +122,26 @@ continuer = True
 
 # main loop
 while continuer:
-    for event in pygame.event.get():   # parcours de la liste des evenements
-        if event.type == QUIT:     # evenement de type QUIT
+    for event in pygame.event.get():   # iteration in all events
+        if event.type == QUIT:
             continuer = False
         if event.type == KEYDOWN:
             if event.key == K_LEFT:
                 mac_gyver.go("left")
-            if event.key == K_RIGHT:
+            elif event.key == K_RIGHT:
                 mac_gyver.go("right")
-            if event.key == K_UP:
+            elif event.key == K_UP:
                 mac_gyver.go("up")
-            if event.key == K_DOWN:
+            elif event.key == K_DOWN:
                 mac_gyver.go("down")
-
             display(maze_map)
+        if mac_gyver.victory():
+            print("You have won !")
+            continuer = False
+
+
+
+
 
 # if __name__ == "__main__":
     # do stuff
