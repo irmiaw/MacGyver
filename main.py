@@ -9,7 +9,7 @@ from pygame.locals import * # import all pygame constants
 # # import my own modules
 # import game
 # import display
-# import load
+# import init
 
 # Constants
 TILE_SIZE = 40
