@@ -10,12 +10,12 @@ from pygame.locals import * # import all pygame constants
 from init import *
 from game import *
 from display import *
+from constants import *
 
 
 # pygame and objects init
 lvl = Lvl(maze_map)
-mac_gyver = Character(maze_map, lvl)
-
+mac_gyver = Character(lvl)
 
 display(lvl.map, mac_gyver.pixel_position, images, window)
 
@@ -28,13 +28,13 @@ while continuer:
             continuer = False
         if event.type == KEYDOWN:
             if event.key == K_LEFT:
-                mac_gyver.go("left")
+                mac_gyver.go(LEFT)
             elif event.key == K_RIGHT:
-                mac_gyver.go("right")
+                mac_gyver.go(RIGHT)
             elif event.key == K_UP:
-                mac_gyver.go("up")
+                mac_gyver.go(UP)
             elif event.key == K_DOWN:
-                mac_gyver.go("down")
+                mac_gyver.go(DOWN)
             display(lvl.map, mac_gyver.pixel_position, images, window)
         if mac_gyver.victory():
             print("You have won !")
