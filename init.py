@@ -37,5 +37,5 @@ maze_map = ["###############",
 pygame.init()
 window = pygame.display.set_mode((15 * TILE_SIZE, 15 * TILE_SIZE))
 
-filenames = ["brick.png", "floor.png", "mac_gyver.png", "murdoc.png"]
+filenames = ["brick.png", "floor.png", "mac_gyver.png", "guardian.png"]
 images = Images(filenames)
