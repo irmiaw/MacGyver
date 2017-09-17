@@ -1,7 +1,7 @@
 import pygame
 
-# Constants
-TILE_SIZE = 40
+from constants import TILE_SIZE
+
 
 class Images:
     def __init__(self, brick, floor, mac_gyver, guardian):

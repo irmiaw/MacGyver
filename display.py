@@ -1,9 +1,8 @@
 
 # from init import *
 import pygame
+from constants import TILE_SIZE
 
-# Constants
-TILE_SIZE = 40
 
 def display(maze_map, mac_position, images, window):
     num_line = 0
