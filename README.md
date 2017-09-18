@@ -98,7 +98,9 @@ Version majeure du programme. Célébration avec une pizza !
 
 2.3: Gestion de la position des objets et leur affichage  
 
-2.4: Répartition aléatoire des objets  
+2.4: Gestion de la collecte des objets  
+
+2.5: Répartition aléatoire des objets  
 
 2.9: Bêta de la 3.0  
 Test du programme, relecture du code et correction des bugs.  
