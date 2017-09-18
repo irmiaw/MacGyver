@@ -20,7 +20,7 @@ def main():
     filenames = ["brick.png", "floor.png", "mac_gyver.png", "guardian.png"]
     images = load.Images(filenames)
 
-    lvl = game.Lvl(load.maze_map)
+    lvl = game.Lvl(load.map("map.xsb"))
     mac_gyver = game.Character(lvl)
 
     display.draw(lvl.map, mac_gyver.pixel_position, images, window)

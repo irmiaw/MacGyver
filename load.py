@@ -10,22 +10,13 @@ class Images:
     def load_image(self, filename):
         return pygame.image.load(filename).convert_alpha()
 
+def map(filename):
+    with open(filename, "r") as f:
+        map = [line for line in f]
+    return map
+
+# map structure:
 # '#': brick
 # ' ': floor
 # '.': guardian
-maze_map = ["###############",
-            "      #  #     ",
-            "#  ## # ## #  #",
-            "# #  ##    ####",
-            "#    # # ### ##",
-            "#  # # #   #   ",
-            "# ## #  ##   # ",
-            "# ##  #  ### # ",
-            "#   #  #    #  ",
-            "###  # ### ## #",
-            "#  # # # #    #",
-            "## # ##  ### ##",
-            "#       ##   ##",
-            "# # # #    #  .",
-            "###############",
-]
+
