@@ -77,7 +77,7 @@ Pas de gestion des collisions avec les murs et si Mac Gyver sort de la map le pr
 1.5: Mac Gyver se cogne  
 Gestion des collisions avec les murs et les bords de la map.  
 
-1.6: Mac Gyver gagne    <---- je suis ici !  
+1.6: Mac Gyver gagne  
 Lorsque Mac Gyver arrive à la position du gardien le programme affiche un message de victoire et se termine.  
 
 1.7: Refonte du programme  
