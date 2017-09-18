@@ -102,6 +102,8 @@ Version majeure du programme. Célébration avec une pizza !
 
 2.5: Répartition aléatoire des objets  
 
+2.6: Message lors de la collecte d'un objet
+
 2.9: Bêta de la 3.0  
 Test du programme, relecture du code et correction des bugs.  
 
