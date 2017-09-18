@@ -24,8 +24,13 @@ def draw(lvl, mac_position, images, window):
         num_line += 1
 
     window.blit(images.mac_gyver, mac_position)
-    window.blit(images.needle, lvl.items["needle"].pixel_position)
-    window.blit(images.tube, lvl.items["tube"].pixel_position)
-    window.blit(images.ether, lvl.items["ether"].pixel_position)
+    if lvl.items["needle"].show:
+        window.blit(images.needle, lvl.items["needle"].pixel_position)
+    
+    if lvl.items["tube"].show:
+        window.blit(images.tube, lvl.items["tube"].pixel_position)
+    
+    if lvl.items["ether"].show:
+        window.blit(images.ether, lvl.items["ether"].pixel_position)
     
     pygame.display.flip()

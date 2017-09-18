@@ -29,13 +29,14 @@ class Item:
 class Character(Lvl):
     def __init__(self, lvl):
         self.y, self.x = self._initial_position(lvl)
-        self.num_items = 3  # for now Mac Gyver has all items
+        self.num_items = 0
         self.lvl = lvl
 
     def _collect_items(self):
-        if self.lvl.map[self.y][self.x] == '$':  # replace with a item list instead of '$'
-            self.lvl.map[self.y][self.x] = ' '
-            self.num_items += 1
+        for item in self.lvl.items:
+            if self.lvl.items[item].x == self.x and self.lvl.items[item].y == self.y:
+                self.num_items += 1
+                self.lvl.items[item].show = False
 
     def go(self, direction):
         if self.lvl.free_path(self.x, self.y, direction):
