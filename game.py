@@ -6,13 +6,24 @@ from constants import *
 class Lvl:
     def __init__(self, map):
         self.map = map
-        # self.objects
+        self.items = {"needle": Item(2, 1), "tube": Item(3, 1), "ether": Item(4, 1)}
 
     def free_path(self, x, y, direction):
         return (direction == LEFT and x > 0 and self.map[y][x-1] != "#" or
         direction == RIGHT and x < 14 and self.map[y][x+1] != "#" or
         direction == UP and y > 0 and self.map[y-1][x] != "#" or
         direction == DOWN and y < 14 and self.map[y+1][x] != "#")
+
+
+class Item:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        self.show = True
+        
+    @property
+    def pixel_position(self):
+        return [self.x * TILE_SIZE, self.y * TILE_SIZE]
 
 
 class Character(Lvl):
