@@ -89,7 +89,7 @@ Mise en place d'un [environnement virtuel](https://openclassrooms.com/courses/ma
 1.9: Bêta de la 2.0  
 Test du programme, relecture du code et correction des bugs.  
 
-**2.0:** Animer le personnage (branche stable)  
+**2.0:** Animer le personnage (branche stable)    <---- je suis ici !  
 Version majeure du programme. Célébration avec une pizza !  
 
 2.1: Chargement de la map a partir d'un fichier  
