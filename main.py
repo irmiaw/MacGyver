@@ -1,8 +1,7 @@
 #! /usr/bin/env python3
 # coding: utf-8
 
-import pygame  # import only necessary modules !
-# display, mixer, draw, event, image, mouse, time
+import pygame
 from pygame.locals import * # import all pygame constants
 
 
