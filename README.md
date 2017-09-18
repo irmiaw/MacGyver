@@ -36,7 +36,7 @@ Le fichier du labyrinthe est une version simplifié du [format .xsb](https://fr.
 ### Modules
 Le programme est découpé en plusieurs modules avec un objectif bien défini. Afin de respecter l'indépendance des modules, les diverses méthodes qu'ils contiennent ne s'appellent pas directement entre eux. L'appel entre les modules est effectué dans la fonction main.  
 - **main:** le fichier qui contient la fonction main
-- **init:** chargement de la carte (a partir du fichier .xsb), des images et init de Pygame  
+- **load:** chargement de la map (a partir du fichier .xsb) et des images du jeu
 - **display:** gestion de l'affichage (module Pygame)  
 - **game:** gestion du jeu (calcul des collisions (murs), objet personnage, méthodes de récupération des objets, calcul de victoire)  
 - **constants:** constantes du programme

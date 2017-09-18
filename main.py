@@ -7,17 +7,24 @@ from pygame.locals import * # import all pygame constants
 
 
 # # import my own modules
-from init import *
-from game import *
-from display import *
+import load
+import game
+import display
 from constants import *
 
 def main():
-    # pygame and objects init
-    lvl = Lvl(maze_map)
-    mac_gyver = Character(lvl)
 
-    display(lvl.map, mac_gyver.pixel_position, images, window)
+    # pygame and objects init
+    pygame.init()
+    window = pygame.display.set_mode((15 * TILE_SIZE, 15 * TILE_SIZE))
+
+    filenames = ["brick.png", "floor.png", "mac_gyver.png", "guardian.png"]
+    images = load.Images(filenames)
+
+    lvl = game.Lvl(load.maze_map)
+    mac_gyver = game.Character(lvl)
+
+    display.draw(lvl.map, mac_gyver.pixel_position, images, window)
 
     continuer = True
 
@@ -35,7 +42,7 @@ def main():
                     mac_gyver.go(UP)
                 elif event.key == K_DOWN:
                     mac_gyver.go(DOWN)
-                display(lvl.map, mac_gyver.pixel_position, images, window)
+                display.draw(lvl.map, mac_gyver.pixel_position, images, window)
             if mac_gyver.victory():
                 print("You have won !")
                 continuer = False

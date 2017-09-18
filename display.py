@@ -1,10 +1,10 @@
 
-# from init import *
+
 import pygame
 from constants import TILE_SIZE
 
 
-def display(maze_map, mac_position, images, window):
+def draw(maze_map, mac_position, images, window):
     num_line = 0
     for line in maze_map:
         num_column = 0
