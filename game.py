@@ -34,7 +34,9 @@ class Character(Lvl):
 
     def _collect_items(self):
         for item in self.lvl.items:
-            if self.lvl.items[item].x == self.x and self.lvl.items[item].y == self.y:
+            if (self.lvl.items[item].x == self.x and
+                    self.lvl.items[item].y == self.y and
+                    self.lvl.items[item].show == True):
                 self.num_items += 1
                 self.lvl.items[item].show = False
 
