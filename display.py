@@ -14,7 +14,7 @@ def draw(maze_map, mac_position, images, window):
 
             if case == "#":
                 window.blit(images.brick, (x,y))
-            elif case == " " or case == ".":
+            elif case == " " or case == "." or case == "@":
                 window.blit(images.floor, (x,y))
 
             if case == ".":
