@@ -12,37 +12,33 @@ from game import *
 from display import *
 from constants import *
 
+def main():
+    # pygame and objects init
+    lvl = Lvl(maze_map)
+    mac_gyver = Character(lvl)
 
-# pygame and objects init
-lvl = Lvl(maze_map)
-mac_gyver = Character(lvl)
+    display(lvl.map, mac_gyver.pixel_position, images, window)
 
-display(lvl.map, mac_gyver.pixel_position, images, window)
+    continuer = True
 
-continuer = True
+    # main loop
+    while continuer:
+        for event in pygame.event.get():   # iteration in all events
+            if event.type == QUIT:
+                continuer = False
+            if event.type == KEYDOWN:
+                if event.key == K_LEFT:
+                    mac_gyver.go(LEFT)
+                elif event.key == K_RIGHT:
+                    mac_gyver.go(RIGHT)
+                elif event.key == K_UP:
+                    mac_gyver.go(UP)
+                elif event.key == K_DOWN:
+                    mac_gyver.go(DOWN)
+                display(lvl.map, mac_gyver.pixel_position, images, window)
+            if mac_gyver.victory():
+                print("You have won !")
+                continuer = False
 
-# main loop
-while continuer:
-    for event in pygame.event.get():   # iteration in all events
-        if event.type == QUIT:
-            continuer = False
-        if event.type == KEYDOWN:
-            if event.key == K_LEFT:
-                mac_gyver.go(LEFT)
-            elif event.key == K_RIGHT:
-                mac_gyver.go(RIGHT)
-            elif event.key == K_UP:
-                mac_gyver.go(UP)
-            elif event.key == K_DOWN:
-                mac_gyver.go(DOWN)
-            display(lvl.map, mac_gyver.pixel_position, images, window)
-        if mac_gyver.victory():
-            print("You have won !")
-            continuer = False
-
-
-
-
-
-# if __name__ == "__main__":
-    # do stuff
+if __name__ == "__main__":
+    main()
