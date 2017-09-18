@@ -17,13 +17,13 @@ def main():
     pygame.init()
     window = pygame.display.set_mode((15 * TILE_SIZE, 15 * TILE_SIZE))
 
-    filenames = ["brick.png", "floor.png", "mac_gyver.png", "guardian.png"]
+    filenames = ["brick.png", "floor.png", "mac_gyver.png", "guardian.png", "needle.png", "tube.png", "ether.png"]
     images = load.Images(filenames)
 
     lvl = game.Lvl(load.map("map.xsb"))
     mac_gyver = game.Character(lvl)
 
-    display.draw(lvl.map, mac_gyver.pixel_position, images, window)
+    display.draw(lvl, mac_gyver.pixel_position, images, window)
 
     continuer = True
 
@@ -41,7 +41,7 @@ def main():
                     mac_gyver.go(UP)
                 elif event.key == K_DOWN:
                     mac_gyver.go(DOWN)
-                display.draw(lvl.map, mac_gyver.pixel_position, images, window)
+                display.draw(lvl, mac_gyver.pixel_position, images, window)
             if mac_gyver.victory():
                 print("You have won !")
                 continuer = False

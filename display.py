@@ -4,9 +4,9 @@ import pygame
 from constants import TILE_SIZE
 
 
-def draw(maze_map, mac_position, images, window):
+def draw(lvl, mac_position, images, window):
     num_line = 0
-    for line in maze_map:
+    for line in lvl.map:
         num_column = 0
         for case in line:
             x = num_column * TILE_SIZE
@@ -14,13 +14,15 @@ def draw(maze_map, mac_position, images, window):
 
             if case == "#":
                 window.blit(images.brick, (x,y))
-            elif case == " " or case == "." or case == "@":
+            else:
                 window.blit(images.floor, (x,y))
 
             if case == ".":
                 window.blit(images.guardian, (x,y))
+                
             num_column += 1
         num_line += 1
 
     window.blit(images.mac_gyver, mac_position)
+    window.blit()
     pygame.display.flip()
