@@ -35,9 +35,11 @@ Le fichier du labyrinthe est une version simplifié du [format .xsb](https://fr.
 
 ### Modules
 Le programme est découpé en plusieurs modules avec un objectif bien défini. Afin de respecter l'indépendance des modules, les diverses méthodes qu'ils contiennent ne s'appellent pas directement entre eux. L'appel entre les modules est effectué dans la fonction main.  
+- **main:** le fichier qui contient la fonction main
 - **init:** chargement de la carte (a partir du fichier .xsb), des images et init de Pygame  
 - **display:** gestion de l'affichage (module Pygame)  
 - **game:** gestion du jeu (calcul des collisions (murs), objet personnage, méthodes de récupération des objets, calcul de victoire)  
+- **constants:** constantes du programme
 
 ## Versionnage du projet
 ### Notation des versions
@@ -56,7 +58,7 @@ C'est le néant. Il n'y a rien à part quelques idées.
 
 0.5: Expérimentations avec Pygame  
 
-1.0: Synthèse des méthodes utiles de Pygame  
+**1.0:** Synthèse des méthodes utiles de Pygame  
 
 1.1: Première brique  
 Affichage d'une image de briques.  
@@ -78,26 +80,51 @@ Gestion des collisions avec les murs et les bords de la map.
 1.6: Mac Gyver gagne    <---- je suis ici !  
 Lorsque Mac Gyver arrive à la position du gardien le programme affiche un message de victoire et se termine.  
 
-1.7: [Refonte du programme](https://openclassrooms.com/courses/manipulez-des-donnees-avec-python-1/organisez-un-projet-en-modules)  
-Le programme est découpé en 2 modules: la gestion de l'affichage et la gestion du jeu.  
+1.7: Refonte du programme  
+Le programme est [découpé en modules](https://openclassrooms.com/courses/manipulez-des-donnees-avec-python-1/organisez-un-projet-en-modules) et est [mieux organisé](https://openclassrooms.com/courses/manipulez-des-donnees-avec-python-1/organisez-un-script)  
 
-1.8: [Gestion des erreurs](https://openclassrooms.com/courses/manipulez-des-donnees-avec-python-1/gerez-les-erreurs-et-les-bogues)  
+1.8: Environnement virtuel  
+Mise en place d'un [environnement virtuel](https://openclassrooms.com/courses/manipulez-des-donnees-avec-python-1/travaillez-dans-un-environnement-virtuel)  
+
+1.9: Bêta de la 2.0  
+Test du programme, relecture du code et correction des bugs.  
+
+**2.0:** Animer le personnage (branche stable)  
+Version majeure du programme. Célébration avec une pizza !  
+
+2.1: Chargement de la map a partir d'un fichier  
+
+2.2: Détection de la position de Mac Gyver  
+
+2.3: Gestion de la position des objets et leur affichage  
+
+2.4: Répartition aléatoire des objets  
+
+2.9: Bêta de la 3.0  
+Test du programme, relecture du code et correction des bugs.  
+
+**3.0:** Récupérer les objets (branche stable)  
+
+3.1: Docstrings  
+Documentation du code + commentaires  
+
+3.2: [Gestion des erreurs](https://openclassrooms.com/courses/manipulez-des-donnees-avec-python-1/gerez-les-erreurs-et-les-bogues)  
 Le programme lève une exception lorsque un bug survient. Le message d'erreur s'affiche en prenant en compte le niveau du log.  
 Points pouvant créer regulièrement des bugs: images manquantes, manque d'un module, mauvais chemin/nom de fichier, utilisateur qui tape n'importe quoi au clavier.  
 Les méthodes qui ne prennent pas en paramètre des données externes au programme plantent plus rarement. Néanmoins il faut tester leurs paramètres pour éviter de commettre des erreurs en chaine si une méthode en amont renvoie une valeur imprévue.  
 
-1.9: Bêta de la 2.0  
-Le programme est testé sous d'autres systèmes d'exploitation et en demandant l'avis à des utilisateurs bêta testeurs.  
+3.5: PEP8  
+Vérification du code avec Pylint  
 
-2.0: Animer le personnage (branche stable)  
-Version majeure du programme. Célébration avec une pizza !
+3.9: Bêta de la 4.0  
+Test du programme, relecture du code et correction des bugs.  
 
-### Autres *milestones*
-3.0: Récupérer les objets (branche stable)  
+**4.0:** Gagner ! (branche stable)  
 
-4.0: Gagner ! (branche stable)  
+4.9: Bêta de la 5.0  
+Test du programme, relecture du code et correction des bugs.  
 
-5.0: Intelligence artificielle (branche stable)  
+**5.0:** Intelligence artificielle (branche stable)  
 
 ## Contribuer
 Ce projet a pour but de valider mes compétences en python. Par conséquent toute pull request avec du code sera refusé.  
