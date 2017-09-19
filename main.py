@@ -1,19 +1,18 @@
 #! /usr/bin/env python3
 # coding: utf-8
+"""Main game file"""
 
 import pygame
 from pygame.locals import * # import all pygame constants
 
-
-# # import my own modules
 import load
 import game
 import display
 from constants import *
 
+"""Main function"""
 def main():
-
-    # pygame and objects init
+    """Pygame and objects init"""
     pygame.init()
     window = pygame.display.set_mode((15 * TILE_SIZE, 15 * TILE_SIZE))
 
@@ -27,7 +26,7 @@ def main():
 
     continuer = True
 
-    # main loop
+    """Main game loop"""
     while continuer:
         for event in pygame.event.get():   # iteration in all events
             if event.type == QUIT:

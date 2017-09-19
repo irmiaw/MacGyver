@@ -1,4 +1,4 @@
-
+"""Game constants"""
 TILE_SIZE = 40
 
 ALIVE = 0

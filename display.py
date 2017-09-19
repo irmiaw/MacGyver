@@ -1,9 +1,9 @@
-
-
+"""Display management"""
 import pygame
 from constants import TILE_SIZE
 
 
+"""Draws the graphics of the game"""
 def draw(lvl, mac_position, images, window):
     num_line = 0
     for line in lvl.map:
