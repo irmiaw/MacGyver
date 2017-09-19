@@ -1,24 +1,34 @@
 
-
+from random import randint
 from constants import *
 
 
 class Lvl:
     def __init__(self, map):
         self.map = map
-        self.items = {"needle": Item(2, 1), "tube": Item(3, 1), "ether": Item(4, 1)}
+        self.items = {"needle": Item(self.random_position()),
+                        "tube": Item(self.random_position()),
+                        "ether": Item(self.random_position())}
 
     def free_path(self, x, y, direction):
         return (direction == LEFT and x > 0 and self.map[y][x-1] != "#" or
         direction == RIGHT and x < 14 and self.map[y][x+1] != "#" or
         direction == UP and y > 0 and self.map[y-1][x] != "#" or
         direction == DOWN and y < 14 and self.map[y+1][x] != "#")
+        
+    def random_position(self):
+        x = 0
+        y = 0
+        while self.map[y][x] != " ":
+            x = randint(0, 14)
+            y = randint(0, 14)
+        return (x, y)
 
 
 class Item:
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
+    def __init__(self, position):
+        self.x = position[0]
+        self.y = position[1]
         self.show = True
         
     @property
