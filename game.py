@@ -42,14 +42,6 @@ class Character(Lvl):
         self.num_items = 0
         self.lvl = lvl
 
-    def _collect_items(self):
-        for item in self.lvl.items:
-            if (self.lvl.items[item].x == self.x and
-                    self.lvl.items[item].y == self.y and
-                    self.lvl.items[item].show == True):
-                self.num_items += 1
-                self.lvl.items[item].show = False
-
     def go(self, direction):
         if self.lvl.free_path(self.x, self.y, direction):
             if direction == LEFT:
@@ -64,8 +56,13 @@ class Character(Lvl):
                 print("error: unknown direction")
             self._collect_items()
 
-    def victory(self):
-        return self.lvl.map[self.y][self.x] == '.' and self.num_items == 3
+    def _collect_items(self):
+        for item in self.lvl.items:
+            if (self.lvl.items[item].x == self.x and
+                    self.lvl.items[item].y == self.y and
+                    self.lvl.items[item].show == True):
+                self.num_items += 1
+                self.lvl.items[item].show = False
         
     def _initial_position(self, lvl):
         num_line = 0
@@ -77,8 +74,16 @@ class Character(Lvl):
                 num_column += 1
             num_line += 1
         # if found nothing raise error
-        
 
     @property
     def pixel_position(self):
         return [self.x * TILE_SIZE, self.y * TILE_SIZE]
+
+    @property
+    def status(self):
+        if self.lvl.map[self.y][self.x] == '.':
+            if self.num_items == 3:
+                return WIN
+            else:
+                return LOST
+        return ALIVE

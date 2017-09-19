@@ -41,9 +41,14 @@ def main():
                     mac_gyver.go(UP)
                 elif event.key == K_DOWN:
                     mac_gyver.go(DOWN)
+                    
                 display.draw(lvl, mac_gyver.pixel_position, images, window)
-            if mac_gyver.victory():
+                
+            if mac_gyver.status == WIN:
                 print("You have won !")
+                continuer = False
+            elif mac_gyver.status == LOST:
+                print("You are dead !")
                 continuer = False
 
 if __name__ == "__main__":
