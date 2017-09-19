@@ -89,7 +89,7 @@ Mise en place d'un [environnement virtuel](https://openclassrooms.com/courses/ma
 1.9: Bêta de la 2.0  
 Test du programme, relecture du code et correction des bugs.  
 
-**2.0:** Animer le personnage (branche stable)    <---- je suis ici !  
+**2.0:** Animer le personnage (branche stable)  
 Version majeure du programme. Célébration avec une pizza !  
 
 2.1: Chargement de la map a partir d'un fichier  
@@ -112,7 +112,7 @@ Documentation du code + commentaires
 2.9: Bêta de la 3.0  
 Test du programme, relecture du code et correction des bugs.  
 
-**3.0:** Récupérer les objets (branche stable)  
+**3.0:** Récupérer les objets (branche stable)    <---- je suis ici !  
 
 3.1: DRY  
 *Don't Repeat Yourself*. Regroupement du code en methodes et autres structures.  
