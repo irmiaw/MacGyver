@@ -101,24 +101,36 @@ Version majeure du programme. Célébration avec une pizza !
 2.4: Gestion de la collecte des objets  
 
 2.5: Répartition aléatoire des objets  
+Algorithme basique, il y a un risque de "collision" avec la position d'un objet existant.  
 
-2.6: Message lors de la collecte d'un objet
+2.6: Mac Gyver perd  
+Lorsque Mac Gyver arrive à la position du gardien et n'a pas les 3 objets il perd et le programme se termine.  
+
+2.7: Docstrings  
+Documentation du code + commentaires  
 
 2.9: Bêta de la 3.0  
 Test du programme, relecture du code et correction des bugs.  
 
 **3.0:** Récupérer les objets (branche stable)  
 
-3.1: Docstrings  
-Documentation du code + commentaires  
+3.1: DRY  
+*Don't Repeat Yourself*. Regroupement du code en methodes et autres structures.  
 
-3.2: [Gestion des erreurs](https://openclassrooms.com/courses/manipulez-des-donnees-avec-python-1/gerez-les-erreurs-et-les-bogues)  
+3.2-7: Autres améliorations  
+Message lors de la collecte d'un objet  
+Regroupement des images dans un dossier  
+Fichier config qui contient les noms des images a charger  
+Amélioration de l'algorithme de répartition des objet  
+Structure générique d'un objet (accepte autant d'objets que on veut, définis dans un fichier externe)  
+
+3.7: PEP8  
+Vérification du code avec Pylint  
+
+3.8: [Gestion des erreurs](https://openclassrooms.com/courses/manipulez-des-donnees-avec-python-1/gerez-les-erreurs-et-les-bogues)  
 Le programme lève une exception lorsque un bug survient. Le message d'erreur s'affiche en prenant en compte le niveau du log.  
 Points pouvant créer regulièrement des bugs: images manquantes, manque d'un module, mauvais chemin/nom de fichier, utilisateur qui tape n'importe quoi au clavier.  
 Les méthodes qui ne prennent pas en paramètre des données externes au programme plantent plus rarement. Néanmoins il faut tester leurs paramètres pour éviter de commettre des erreurs en chaine si une méthode en amont renvoie une valeur imprévue.  
-
-3.5: PEP8  
-Vérification du code avec Pylint  
 
 3.9: Bêta de la 4.0  
 Test du programme, relecture du code et correction des bugs.  
