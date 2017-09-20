@@ -1,8 +1,8 @@
 """Load images and map"""
 import pygame
 
+"""Load images from given filname"""
 class Images:
-    """Load images from given filname"""
     def __init__(self, filenames):
         self.brick = self.load_image(filenames[0])
         self.floor = self.load_image(filenames[1])
@@ -15,8 +15,9 @@ class Images:
     def load_image(self, filename):
         return pygame.image.load(filename).convert_alpha()
 
+
+"""Load map from given filename"""
 def map(filename):
-    """Load map from given filename"""
     with open(filename, "r") as f:
         map = [line for line in f]
     return map
