@@ -91,7 +91,8 @@ class Character:
                 self.lvl.items[item].show = False
                 print(self.item_msg[item])
 
-    def _initial_position(self, lvl):
+    @classmethod
+    def _initial_position(cls, lvl):
         """Get initial character's position from the maze_map"""
         num_line = 0
         for line in lvl.maze_map:

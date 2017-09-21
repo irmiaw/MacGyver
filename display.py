@@ -1,6 +1,6 @@
 """Display management"""
 import pygame
-from constants import *
+from constants import TILE_SIZE, WIN, LOST
 
 
 def draw(lvl, mac_gyver, images, window):

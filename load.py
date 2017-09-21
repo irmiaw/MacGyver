@@ -13,7 +13,8 @@ class Images:
         for item in config["items"]:
             self.items[item] = self.load_image(config["items"][item]["img"])
 
-    def load_image(self, filename):
+    @classmethod
+    def load_image(cls, filename):
         """Calls pygame to load image and convert to transparent"""
         return pygame.image.load(filename).convert_alpha()
 
