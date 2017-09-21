@@ -23,32 +23,44 @@ def main():
 
     display.draw(lvl, mac_gyver, images, window)
 
-    continuer = True
+    continue_game = True
+    end_game = False
 
     """Main game loop"""
     print(config["start_msg"])
-    while continuer:
+    while continue_game:
         for event in pygame.event.get():   # iteration in all events
             if event.type == QUIT:
-                continuer = False
+                continue_game = False
             if event.type == KEYDOWN:
-                if event.key == K_LEFT:
-                    mac_gyver.go(LEFT)
-                elif event.key == K_RIGHT:
-                    mac_gyver.go(RIGHT)
-                elif event.key == K_UP:
-                    mac_gyver.go(UP)
-                elif event.key == K_DOWN:
-                    mac_gyver.go(DOWN)
+                if not end_game:
+                    if event.key == K_LEFT:
+                        mac_gyver.go(LEFT)
+                    elif event.key == K_RIGHT:
+                        mac_gyver.go(RIGHT)
+                    elif event.key == K_UP:
+                        mac_gyver.go(UP)
+                    elif event.key == K_DOWN:
+                        mac_gyver.go(DOWN)
+
+                    if mac_gyver.status == WIN:
+                        print(config["end_msg_win"])
+                    elif mac_gyver.status == LOST:
+                        print(config["end_msg_lost"])
+
+                    if mac_gyver.status != ALIVE:
+                        print("\nDo you want to replay (y/n) ?")
+                        end_game = True
+                else:
+                    if event.key == K_y:
+                        print("Ejoy!")
+                        mac_gyver.reset()
+                        lvl.reset()
+                        end_game = False
+                    elif event.key == K_n:
+                        continue_game = False
 
                 display.draw(lvl, mac_gyver, images, window)
-
-            if mac_gyver.status == WIN:
-                print(config["end_msg_win"])
-                continuer = False
-            elif mac_gyver.status == LOST:
-                print(config["end_msg_lost"])
-                continuer = False
 
 if __name__ == "__main__":
     main()

@@ -11,6 +11,11 @@ class Lvl:
         for item in items:
             self.items[item] = Item(self.random_position())
 
+    def reset(self):
+        for item in self.items:
+            self.map[self.items[item].y][self.items[item].x] = " "
+            self.items[item] = Item(self.random_position())
+
     def free_path(self, x, y, direction):
         """Test if the path is free (no wall) in a given start position and direction"""
         return (direction == LEFT and x > 0 and self.map[y][x-1] != "#" or
@@ -45,12 +50,15 @@ class Item:
 class Character:
     """Describes the main character"""
     def __init__(self, lvl, items):
-        self.y, self.x = self._initial_position(lvl)
-        self.num_items = 0
+        self.lvl = lvl
+        self.reset()
         self.item_msg = {}
         for item in items:
             self.item_msg[item] = items[item]["msg"]
-        self.lvl = lvl
+
+    def reset(self):
+        self.y, self.x = self._initial_position(self.lvl)
+        self.num_items = 0
 
     def go(self, direction):
         """Move the character in a given direction if possible"""
