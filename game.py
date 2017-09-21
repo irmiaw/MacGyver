@@ -4,47 +4,52 @@ from constants import *
 
 
 class Lvl:
-    """Lvl class, contains map and items"""
-    def __init__(self, map, items):
-        self.map = map
+    """Lvl class, contains maze_map and items"""
+    def __init__(self, maze_map, items):
+        self.maze_map = maze_map
         self.items = {}
         for item in items:
             self.items[item] = Item(self.random_position())
 
     def reset(self):
+        """Places all items randomly in the maze_map"""
         for item in self.items:
-            self.map[self.items[item].y][self.items[item].x] = " "
+            self.maze_map[self.items[item].pos_y][self.items[item].pos_x] = " "
             self.items[item] = Item(self.random_position())
 
-    def free_path(self, x, y, direction):
+    def free_path(self, pos_x, pos_y, direction):
         """Test if the path is free (no wall) in a given start position and direction"""
-        return (direction == LEFT and x > 0 and self.map[y][x-1] != "#" or
-                direction == RIGHT and x < (MAP_LENGTH - 1) and self.map[y][x+1] != "#" or
-                direction == UP and y > 0 and self.map[y-1][x] != "#" or
-                direction == DOWN and y < (MAP_HEIGHT - 1) and self.map[y+1][x] != "#")
+        return (direction == LEFT and pos_x > 0 and
+                self.maze_map[pos_y][pos_x-1] != "#" or
+                direction == RIGHT and pos_x < (MAP_LENGTH - 1) and
+                self.maze_map[pos_y][pos_x+1] != "#" or
+                direction == UP and pos_y > 0 and
+                self.maze_map[pos_y-1][pos_x] != "#" or
+                direction == DOWN and pos_y < (MAP_HEIGHT - 1) and
+                self.maze_map[pos_y+1][pos_x] != "#")
 
     def random_position(self):
-        """Randomly choses a free position in the map to place an item"""
-        x = 0
-        y = 0
-        while self.map[y][x] != " ":
-            x = randint(0, (MAP_LENGTH - 1))
-            y = randint(0, (MAP_HEIGHT - 1))
-        self.map[y][x] = "*"
-        return (x, y)
+        """Randomly choses a free position in the maze_map to place an item"""
+        pos_x = 0
+        pos_y = 0
+        while self.maze_map[pos_y][pos_x] != " ":
+            pos_x = randint(0, (MAP_LENGTH - 1))
+            pos_y = randint(0, (MAP_HEIGHT - 1))
+        self.maze_map[pos_y][pos_x] = "*"
+        return (pos_x, pos_y)
 
 
 class Item:
     """Describes an item"""
     def __init__(self, position):
-        self.x = position[0]
-        self.y = position[1]
+        self.pos_x = position[0]
+        self.pos_y = position[1]
         self.show = True
 
     @property
-    def pixel_position(self):
-        """Pixel position of the item, useful when bliting the image"""
-        return [self.x * TILE_SIZE, self.y * TILE_SIZE]
+    def pipos_xel_position(self):
+        """Pipos_xel position of the item, useful when bliting the image"""
+        return [self.pos_x * TILE_SIZE, self.pos_y * TILE_SIZE]
 
 
 class Character:
@@ -57,20 +62,21 @@ class Character:
             self.item_msg[item] = items[item]["msg"]
 
     def reset(self):
-        self.y, self.x = self._initial_position(self.lvl)
+        """Puts the character in his initial spot and clears his items"""
+        self.pos_y, self.pos_x = self._initial_position(self.lvl)
         self.num_items = 0
 
-    def go(self, direction):
+    def move_to(self, direction):
         """Move the character in a given direction if possible"""
-        if self.lvl.free_path(self.x, self.y, direction):
+        if self.lvl.free_path(self.pos_x, self.pos_y, direction):
             if direction == LEFT:
-                self.x -= 1
+                self.pos_x -= 1
             elif direction == RIGHT:
-                self.x += 1
+                self.pos_x += 1
             elif direction == UP:
-                self.y -= 1
+                self.pos_y -= 1
             elif direction == DOWN:
-                self.y += 1
+                self.pos_y += 1
             else:
                 print("error: unknown direction")
             self._collect_items()
@@ -78,17 +84,17 @@ class Character:
     def _collect_items(self):
         """Collect items found in the way"""
         for item in self.lvl.items:
-            if (self.lvl.items[item].x == self.x and
-                    self.lvl.items[item].y == self.y and
+            if (self.lvl.items[item].pos_x == self.pos_x and
+                    self.lvl.items[item].pos_y == self.pos_y and
                     self.lvl.items[item].show):
                 self.num_items += 1
                 self.lvl.items[item].show = False
                 print(self.item_msg[item])
 
     def _initial_position(self, lvl):
-        """Get initial character's position from the map"""
+        """Get initial character's position from the maze_map"""
         num_line = 0
-        for line in lvl.map:
+        for line in lvl.maze_map:
             num_column = 0
             for case in line:
                 if case == "@":
@@ -100,12 +106,12 @@ class Character:
     @property
     def pixel_position(self):
         """Pixel position of the character, useful when bliting the image"""
-        return [self.x * TILE_SIZE, self.y * TILE_SIZE]
+        return [self.pos_x * TILE_SIZE, self.pos_y * TILE_SIZE]
 
     @property
     def status(self):
         """Character's status (WIN, LOST or ALIVE)"""
-        if self.lvl.map[self.y][self.x] == '.':
+        if self.lvl.maze_map[self.pos_y][self.pos_x] == '.':
             if self.num_items == len(self.lvl.items):
                 return WIN
             return LOST

@@ -3,8 +3,8 @@ import pygame
 from constants import *
 
 
-"""Draws the graphics of the game"""
 def draw(lvl, mac_gyver, images, window):
+    """Draws the graphics of the game"""
     num_line = 0
     for line in lvl.map:
         num_column = 0
@@ -13,12 +13,12 @@ def draw(lvl, mac_gyver, images, window):
             y = num_line * TILE_SIZE
 
             if case == "#":
-                window.blit(images.brick, (x,y))
+                window.blit(images.brick, (x, y))
             else:
-                window.blit(images.floor, (x,y))
+                window.blit(images.floor, (x, y))
 
             if case == "." and mac_gyver.status != WIN:
-                window.blit(images.guardian, (x,y))
+                window.blit(images.guardian, (x, y))
 
             num_column += 1
         num_line += 1

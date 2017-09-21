@@ -2,8 +2,8 @@
 import json
 import pygame
 
-"""Load images from given config parameters"""
 class Images:
+    """Load images from given config parameters"""
     def __init__(self, config):
         self.brick = self.load_image(config["brick"])
         self.floor = self.load_image(config["floor"])
@@ -17,18 +17,18 @@ class Images:
         return pygame.image.load(filename).convert_alpha()
 
 
-"""Load map from given filename"""
-def map(filename):
-    with open(filename, "r") as f:
+def map_from_file(filename):
+    """Load map from given filename"""
+    with open(filename, "r") as map_file:
         # we will need to modify the map when placing items, so we change it to a double list
-        map = [list(line) for line in f]
-    return map
+        maze_map = [list(line) for line in map_file]
+    return maze_map
 # map structure:
 # '#': brick
 # ' ': floor
 # '.': guardian
 
-"""Load config from given filename"""
 def config(filename):
+    """Load config from given filename"""
     with open(filename) as data:
         return json.load(data)
