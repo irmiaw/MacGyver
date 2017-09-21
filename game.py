@@ -59,7 +59,7 @@ class Character:
         self.reset()
         self.item_msg = {}
         for item in items:
-            self.item_msg[item] = items[item]["msg"]
+            self.item_msg[item] = items[item].get("msg")  # returns None if not set
 
     def reset(self):
         """Puts the character in his initial spot and clears his items"""
@@ -89,7 +89,8 @@ class Character:
                     self.lvl.items[item].show):
                 self.num_items += 1
                 self.lvl.items[item].show = False
-                print(self.item_msg[item])
+                if self.item_msg[item] != None:
+                    print(self.item_msg[item])
 
     @classmethod
     def _initial_position(cls, lvl):
@@ -102,7 +103,7 @@ class Character:
                     return (num_line, num_column)
                 num_column += 1
             num_line += 1
-        # if found nothing raise error
+        print("Initial character's position not found")
 
     @property
     def pixel_position(self):
