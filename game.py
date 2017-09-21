@@ -5,11 +5,11 @@ from constants import *
 
 """Lvl class, contains map and items"""
 class Lvl:
-    def __init__(self, map):
+    def __init__(self, map, items):
         self.map = map
-        self.items = {"needle": Item(self.random_position()),
-                        "tube": Item(self.random_position()),
-                        "ether": Item(self.random_position())}
+        self.items = {}
+        for item in items:
+            self.items[item] = Item(self.random_position())
 
     """Test if the path is free (no wall) in a given start position and direction"""
     def free_path(self, x, y, direction):
