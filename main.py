@@ -15,7 +15,7 @@ def main():
     """Pygame and objects init"""
     pygame.init()
     window = pygame.display.set_mode((MAP_LENGTH * TILE_SIZE, MAP_HEIGHT * TILE_SIZE))
-    
+
     config = load.config("config.json")
     images = load.Images(config)
     lvl = game.Lvl(load.map("map.xsb"), config["items"])
@@ -26,6 +26,7 @@ def main():
     continuer = True
 
     """Main game loop"""
+    print(config["start_msg"])
     while continuer:
         for event in pygame.event.get():   # iteration in all events
             if event.type == QUIT:
@@ -39,14 +40,14 @@ def main():
                     mac_gyver.go(UP)
                 elif event.key == K_DOWN:
                     mac_gyver.go(DOWN)
-                    
+
                 display.draw(lvl, mac_gyver.pixel_position, images, window)
-                
+
             if mac_gyver.status == WIN:
-                print("You have won !")
+                print(config["end_msg_win"])
                 continuer = False
             elif mac_gyver.status == LOST:
-                print("You are dead !")
+                print(config["end_msg_lost"])
                 continuer = False
 
 if __name__ == "__main__":
