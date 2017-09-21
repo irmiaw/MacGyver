@@ -48,7 +48,7 @@ class Item:
 
     @property
     def pixel_position(self):
-        """Pipos_xel position of the item, useful when bliting the image"""
+        """Pixel position of the item, useful when bliting the image"""
         return [self.pos_x * TILE_SIZE, self.pos_y * TILE_SIZE]
 
 
@@ -111,9 +111,9 @@ class Character:
 
     @property
     def status(self):
-        """Character's status (WIN, LOST or ALIVE)"""
+        """Character's status (WIN, LOST or IN_MAZE)"""
         if self.lvl.maze_map[self.pos_y][self.pos_x] == '.':
             if self.num_items == len(self.lvl.items):
                 return WIN
             return LOST
-        return ALIVE
+        return IN_MAZE

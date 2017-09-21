@@ -47,7 +47,7 @@ def main():
                     elif mac_gyver.status == LOST:
                         print(config["end_msg_lost"])
 
-                    if mac_gyver.status != ALIVE:
+                    if mac_gyver.status != IN_MAZE:
                         print("\nDo you want to replay (y/n) ?")
                         end_game = True
                 else:
