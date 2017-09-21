@@ -123,15 +123,19 @@ Message lors de la collecte d'un objet, message de début et fin de partie
 Les noms des images a charger (+ images dans un dossier à part)  
 Le nom des objets  
 
-3.2: Nombre d'objets variable  
-Pour ajouter un objet il suffit de modifier le fichier config.json et rien d'autre.  
+3.2: Programme plus fléxible  
+Nombre d'objets variable: pour ajouter un objet il suffit de modifier le fichier config.json et rien d'autre.  
+Taille de la map variable: pour modifier la taille de la map il suffit de modifier une constante et adapter le fichier map.xsb.  
 
-3.3: Dossiers 'data' et 'modules'  
+3.3: Affichage des messages/dialogues dans la console  
 
-TODO:  
-Amélioration de l'algorithme de répartition des objets (éviter leur apparition sur une même case)  
-Affichage des messages/dialogues dans la console  
-N'afficher que Mac Gyver ou le gardien lorsqu'ils se trouvent sur la même case (en fonction de la victoire ou perte)  
+3.4: Amélioration de l'algorithme de répartition des objets (éviter leur apparition sur une même case)  
+
+3.5: N'afficher que Mac Gyver ou le gardien lorsqu'ils se trouvent sur la même case (en fonction de la victoire ou perte)  
+
+3.6: Replay  
+Proposer de rejouer à la fin d'une partie.  
+La position des objets est réinitialisée, Mac Gyver replacé sur sa position initiale et son inventaire est vidé.  
 
 3.7: PEP8  
 Vérification du code avec Pylint  
