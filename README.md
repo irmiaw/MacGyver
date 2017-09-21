@@ -107,22 +107,31 @@ Algorithme basique, il y a un risque de "collision" avec la position d'un objet 
 Lorsque Mac Gyver arrive à la position du gardien et n'a pas les 3 objets il perd et le programme se termine.  
 
 2.7: Docstrings  
-Documentation du code + commentaires  
+Documentation du code  
+
+2.8: DRY  
+*Don't Repeat Yourself*. Regroupement du code en methodes et autres structures.  
 
 2.9: Bêta de la 3.0  
 Test du programme, relecture du code et correction des bugs.  
 
 **3.0:** Récupérer les objets (branche stable)    <---- je suis ici !  
 
-3.1: DRY  
-*Don't Repeat Yourself*. Regroupement du code en methodes et autres structures.  
+3.1: Fichier config.json  
+Le fichier contient la config de plusieurs variables  
+Message lors de la collecte d'un objet, message de début et fin de partie  
+Les noms des images a charger (images dans un dossier à part)  
+Le nom des objets  
 
-3.2-7: Autres améliorations  
-Message lors de la collecte d'un objet  
-Regroupement des images dans un dossier  
-Fichier config qui contient les noms des images a charger  
-Amélioration de l'algorithme de répartition des objet  
-Structure générique d'un objet (accepte autant d'objets que on veut, définis dans un fichier externe)  
+3.2: Nombre d'objets variable  
+Pour ajouter un objet il suffit de modifier le fichier config.json et rien d'autre.  
+
+3.3: Dossiers 'data' et 'modules'  
+
+TODO:  
+Amélioration de l'algorithme de répartition des objets (éviter leur apparition sur une même case)  
+Affichage des messages/dialogues dans la console  
+N'afficher que Mac Gyver ou le gardien lorsqu'ils se trouvent sur la même case (en fonction de la victoire ou perte)  
 
 3.7: PEP8  
 Vérification du code avec Pylint  
