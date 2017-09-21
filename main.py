@@ -14,7 +14,7 @@ from constants import *
 def main():
     """Pygame and objects init"""
     pygame.init()
-    window = pygame.display.set_mode((15 * TILE_SIZE, 15 * TILE_SIZE))
+    window = pygame.display.set_mode((MAP_LENGTH * TILE_SIZE, MAP_HEIGHT * TILE_SIZE))
     
     config = load.config("config.json")
     images = load.Images(config)

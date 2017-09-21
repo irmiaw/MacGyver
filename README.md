@@ -117,13 +117,13 @@ Test du programme, relecture du code et correction des bugs.
 
 **3.0:** Récupérer les objets (branche stable)  
 
-3.1: Fichier config.json    <---- je suis ici !  
+3.1: Fichier config.json  
 Le fichier contient la configuration des variables suivants:  
 Message lors de la collecte d'un objet, message de début et fin de partie  
 Les noms des images a charger (+ images dans un dossier à part)  
 Le nom des objets  
 
-3.2: Programme plus fléxible  
+3.2: Programme plus fléxible    <---- je suis ici !  
 Nombre d'objets variable: pour ajouter un objet il suffit de modifier le fichier config.json et rien d'autre.  
 Taille de la map variable: pour modifier la taille de la map il suffit de modifier une constante et adapter le fichier map.xsb.  
 

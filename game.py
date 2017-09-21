@@ -14,17 +14,17 @@ class Lvl:
     """Test if the path is free (no wall) in a given start position and direction"""
     def free_path(self, x, y, direction):
         return (direction == LEFT and x > 0 and self.map[y][x-1] != "#" or
-        direction == RIGHT and x < 14 and self.map[y][x+1] != "#" or
+        direction == RIGHT and x < (MAP_LENGTH - 1) and self.map[y][x+1] != "#" or
         direction == UP and y > 0 and self.map[y-1][x] != "#" or
-        direction == DOWN and y < 14 and self.map[y+1][x] != "#")
+        direction == DOWN and y < (MAP_HEIGHT - 1) and self.map[y+1][x] != "#")
         
     """Randomly choses a free position in the map to place an item"""
     def random_position(self):
         x = 0
         y = 0
         while self.map[y][x] != " ":
-            x = randint(0, 14)
-            y = randint(0, 14)
+            x = randint(0, (MAP_LENGTH - 1))
+            y = randint(0, (MAP_HEIGHT - 1))
         return (x, y)
 
 
