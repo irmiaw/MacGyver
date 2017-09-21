@@ -21,7 +21,7 @@ def main():
     lvl = game.Lvl(load.map("map.xsb"), config["items"])
     mac_gyver = game.Character(lvl, config["items"])
 
-    display.draw(lvl, mac_gyver.pixel_position, images, window)
+    display.draw(lvl, mac_gyver, images, window)
 
     continuer = True
 
@@ -41,7 +41,7 @@ def main():
                 elif event.key == K_DOWN:
                     mac_gyver.go(DOWN)
 
-                display.draw(lvl, mac_gyver.pixel_position, images, window)
+                display.draw(lvl, mac_gyver, images, window)
 
             if mac_gyver.status == WIN:
                 print(config["end_msg_win"])
