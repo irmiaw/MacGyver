@@ -141,9 +141,10 @@ La position des objets est réinitialisée, Mac Gyver replacé sur sa position i
 Vérification du code avec Pylint  
 
 3.8: [Gestion des erreurs](https://openclassrooms.com/courses/manipulez-des-donnees-avec-python-1/gerez-les-erreurs-et-les-bogues)  
-Le programme lève une exception lorsque un bug survient. Le message d'erreur s'affiche en prenant en compte le niveau du log.  
-Points pouvant créer regulièrement des bugs: images manquantes, manque d'un module, mauvais chemin/nom de fichier, utilisateur qui tape n'importe quoi au clavier.  
-Les méthodes qui ne prennent pas en paramètre des données externes au programme plantent plus rarement. Néanmoins il faut tester leurs paramètres pour éviter de commettre des erreurs en chaine si une méthode en amont renvoie une valeur imprévue.  
+Ajout de messages d'erreur clairs pour les utilisateurs du programme:  
+- Changement de noms des fichiers du programme (par ex. si l'utilisateur essaye de remplacer une image par une autre).  
+- Modification du config.json et oubli de spécifier un message, ou lien vers l'image de l'objet incorrect.  
+- Oubli de définir la position initiale du personnage dans le fichier map.xsb (les autres erreurs ne sont pas gérées !).  
 
 3.9: Bêta de la 4.0  
 Test du programme, relecture du code et correction des bugs.  
