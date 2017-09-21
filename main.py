@@ -15,10 +15,9 @@ def main():
     """Pygame and objects init"""
     pygame.init()
     window = pygame.display.set_mode((15 * TILE_SIZE, 15 * TILE_SIZE))
-
-    filenames = ["brick.png", "floor.png", "mac_gyver.png", "guardian.png", "needle.png", "tube.png", "ether.png"]
-    images = load.Images(filenames)
-
+    
+    config = load.config("config.json")
+    images = load.Images(config)
     lvl = game.Lvl(load.map("map.xsb"))
     mac_gyver = game.Character(lvl)
 
