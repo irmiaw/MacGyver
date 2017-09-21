@@ -43,9 +43,12 @@ class Item:
 
 class Character:
     """Describes the main character"""
-    def __init__(self, lvl):
+    def __init__(self, lvl, items):
         self.y, self.x = self._initial_position(lvl)
         self.num_items = 0
+        self.item_msg = {}
+        for item in items:
+            self.item_msg[item] = items[item]["msg"]
         self.lvl = lvl
 
     def go(self, direction):
@@ -71,6 +74,7 @@ class Character:
                     self.lvl.items[item].show):
                 self.num_items += 1
                 self.lvl.items[item].show = False
+                print(self.item_msg[item])
 
     def _initial_position(self, lvl):
         """Get initial character's position from the map"""

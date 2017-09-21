@@ -19,7 +19,7 @@ def main():
     config = load.config("config.json")
     images = load.Images(config)
     lvl = game.Lvl(load.map("map.xsb"), config["items"])
-    mac_gyver = game.Character(lvl)
+    mac_gyver = game.Character(lvl, config["items"])
 
     display.draw(lvl, mac_gyver.pixel_position, images, window)
 
