@@ -63,7 +63,7 @@ C'est le néant. Il n'y a rien à part quelques idées.
 1.1: Première brique  
 Affichage d'une image de briques.  
 
-1.2: Mur de briques
+1.2: Mur de briques  
 Affichage des briques ou espaces en parcourant une liste à 2 dimensions 15*15, appelé map.  
 
 1.3: Personnages  
@@ -119,9 +119,9 @@ Test du programme, relecture du code et correction des bugs.
 
 3.1: Fichier config.json  
 Le fichier contient la configuration des variables suivants:  
-Message lors de la collecte d'un objet, message de début et fin de partie  
-Les noms des images a charger (+ images dans un dossier à part)  
-Le nom des objets  
+- Message lors de la collecte d'un objet, message de début et fin de partie  
+- Les noms des images a charger (+ images dans un dossier à part)  
+- Le nom des objets  
 
 3.2: Programme plus fléxible  
 Nombre d'objets variable: pour ajouter un objet il suffit de modifier le fichier config.json et rien d'autre.  
