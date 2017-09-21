@@ -1,12 +1,12 @@
 {
-  "start_msg": "You find yourself trapped in a labyrinth.\nHurry up or you will be late to dinner !",
+  "start_msg": "You find yourself trapped in a labyrinth.\nHurry up or you will be late for dinner !\n",
   "brick": "images/brick.png",
   "floor": "images/floor.png",
   "mac_gyver": "images/mac_gyver.png",
   "guardian": "images/guardian.png",
-  "items": {"needle": {"img": "images/needle.png", "msg": "Let's put this needle in my pocket !"},
-            "tube": {"img": "images/tube.png", "msg": "An empty tube. If it's there it means I will need it."},
-            "ether": {"img": "images/ether.png", "msg": "Damn, I thought it was alcohol. Whatever, I will take it anyway."}},
+  "items": {"needle": {"img": "images/needle.png", "msg": "[Mac Gyver] Let's put this needle in my pocket !"},
+            "tube": {"img": "images/tube.png", "msg": "[Mac Gyver] An empty tube. If it's there it means I will need it."},
+            "ether": {"img": "images/ether.png", "msg": "[Mac Gyver] Damn, I thought it was alcohol. Whatever, I will take it anyway."}},
   "end_msg_win": "\n[Mac Gyver] It's time for your insulin injection !\n[Guardian] Wait, I don't even have diab... *RONFLRRR*\n[You escaped successfully !]",
   "end_msg_lost": "\n*BLAM* *BLAM*\n[Guardian] Who are you and what are you doing here ?!\n[Mac Gyver] *AHRG* I'm dying...\n[You are buried for eternity in the labyrinth]"
 }
