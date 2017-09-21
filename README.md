@@ -115,12 +115,12 @@ Documentation du code
 2.9: Bêta de la 3.0  
 Test du programme, relecture du code et correction des bugs.  
 
-**3.0:** Récupérer les objets (branche stable)    <---- je suis ici !  
+**3.0:** Récupérer les objets (branche stable)  
 
-3.1: Fichier config.json  
-Le fichier contient la config de plusieurs variables  
+3.1: Fichier config.json    <---- je suis ici !  
+Le fichier contient la configuration des variables suivants:  
 Message lors de la collecte d'un objet, message de début et fin de partie  
-Les noms des images a charger (images dans un dossier à part)  
+Les noms des images a charger (+ images dans un dossier à part)  
 Le nom des objets  
 
 3.2: Nombre d'objets variable  
