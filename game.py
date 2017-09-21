@@ -93,7 +93,7 @@ class Character(Lvl):
     @property
     def status(self):
         if self.lvl.map[self.y][self.x] == '.':
-            if self.num_items == 3:
+            if self.num_items == len(self.lvl.items):
                 return WIN
             else:
                 return LOST
