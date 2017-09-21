@@ -20,7 +20,8 @@ class Images:
 """Load map from given filename"""
 def map(filename):
     with open(filename, "r") as f:
-        map = [line for line in f]
+        # we will need to modify the map when placing items, so we change it to a double list
+        map = [list(line) for line in f]
     return map
 # map structure:
 # '#': brick

@@ -25,6 +25,7 @@ class Lvl:
         while self.map[y][x] != " ":
             x = randint(0, (MAP_LENGTH - 1))
             y = randint(0, (MAP_HEIGHT - 1))
+        self.map[y][x] = "*"
         return (x, y)
 
 
