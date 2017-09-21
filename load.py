@@ -14,6 +14,7 @@ class Images:
             self.items[item] = self.load_image(config["items"][item]["img"])
 
     def load_image(self, filename):
+        """Calls pygame to load image and convert to transparent"""
         return pygame.image.load(filename).convert_alpha()
 
 
@@ -28,7 +29,7 @@ def map_from_file(filename):
 # ' ': floor
 # '.': guardian
 
-def config(filename):
+def config_from_file(filename):
     """Load config from given filename"""
     with open(filename) as data:
         return json.load(data)

@@ -15,7 +15,7 @@ def main():
     pygame.init()
     window = pygame.display.set_mode((MAP_LENGTH * TILE_SIZE, MAP_HEIGHT * TILE_SIZE))
 
-    config = load.config("config.json")
+    config = load.config_from_file("config.json")
     images = load.Images(config)
     lvl = game.Lvl(load.map_from_file("map.xsb"), config["items"])
     mac_gyver = game.Character(lvl, config["items"])
