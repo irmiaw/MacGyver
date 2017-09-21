@@ -6,19 +6,18 @@ from constants import *
 def draw(lvl, mac_gyver, images, window):
     """Draws the graphics of the game"""
     num_line = 0
-    for line in lvl.map:
+    for line in lvl.maze_map:
         num_column = 0
         for case in line:
-            x = num_column * TILE_SIZE
-            y = num_line * TILE_SIZE
+            img_pos = [num_column * TILE_SIZE, num_line * TILE_SIZE]
 
             if case == "#":
-                window.blit(images.brick, (x, y))
+                window.blit(images.brick, img_pos)
             else:
-                window.blit(images.floor, (x, y))
+                window.blit(images.floor, img_pos)
 
             if case == "." and mac_gyver.status != WIN:
-                window.blit(images.guardian, (x, y))
+                window.blit(images.guardian, img_pos)
 
             num_column += 1
         num_line += 1
