@@ -47,7 +47,7 @@ class Item:
         self.show = True
 
     @property
-    def pipos_xel_position(self):
+    def pixel_position(self):
         """Pipos_xel position of the item, useful when bliting the image"""
         return [self.pos_x * TILE_SIZE, self.pos_y * TILE_SIZE]
 
