@@ -146,10 +146,10 @@ Ajout de messages d'erreur clairs pour les utilisateurs du programme:
 - Modification du config.json et oubli de spécifier un message, ou lien vers l'image de l'objet incorrect.  
 - Oubli de définir la position initiale du personnage dans le fichier map.xsb (les autres erreurs ne sont pas gérées !).  
 
-3.9: Bêta de la 4.0    <---- je suis ici !  
+3.9: Bêta de la 4.0  
 Test du programme, relecture du code et correction des bugs.  
 
-**4.0:** Gagner ! (branche stable)  
+**4.0:** Gagner ! (branche stable)    <---- je suis ici !  
 
 4.9: Bêta de la 5.0  
 Test du programme, relecture du code et correction des bugs.  
